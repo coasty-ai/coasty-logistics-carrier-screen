@@ -5,7 +5,7 @@
   "niche": "motor-carrier safety screening",
   "target": "safer.fmcsa.dot.gov",
   "publicTarget": true,
-  "task": "TODO",
+  "task": "Go to https://safer.fmcsa.dot.gov/CompanySnapshot.aspx and look up the motor carrier whose USDOT number is 76830. From the company snapshot returned for that carrier, record the legal name, the DBA name if one is listed, the entity type, the USDOT operating status, the number of power units, and the number of drivers. Record the safety rating and its rating date as well, or state plainly that no rating is shown if the snapshot does not list one. Then report those values as a single labelled list, confirming that the USDOT number on the snapshot you read is 76830.",
   "expectedSteps": 14,
   "maxSteps": 24,
   "capCents": 121,
