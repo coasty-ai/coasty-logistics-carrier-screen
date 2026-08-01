@@ -1,0 +1,18 @@
+{
+  "slug": "logistics-carrier-screen",
+  "title": "Logistics — motor carrier safety screening",
+  "vertical": "Logistics",
+  "niche": "motor-carrier safety screening",
+  "target": "safer.fmcsa.dot.gov",
+  "publicTarget": true,
+  "task": "TODO",
+  "expectedSteps": 14,
+  "maxSteps": 24,
+  "capCents": 121,
+  "cuaVersion": "v5",
+  "deadlineSeconds": 900,
+  "machine": {
+    "os_type": "linux",
+    "desktop_enabled": true
+  }
+}

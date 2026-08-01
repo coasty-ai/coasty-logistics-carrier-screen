@@ -1,0 +1,33 @@
+{
+  "name": "coasty-logistics-carrier-screen",
+  "version": "1.0.0",
+  "description": "An AI agent that screens a motor carrier's federal safety record before you put freight on their trucks.",
+  "keywords": [
+    "coasty",
+    "computer-use",
+    "ai-agent",
+    "browser-automation",
+    "rpa",
+    "logistics",
+    "logistics-carrier-screen"
+  ],
+  "homepage": "https://github.com/coasty-ai/coasty-logistics-carrier-screen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coasty-ai/coasty-logistics-carrier-screen.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "start": "node src/cli.mjs run",
+    "demo": "node src/cli.mjs demo",
+    "estimate": "node src/cli.mjs estimate",
+    "test": "node --test test/*.test.mjs",
+    "mock": "node tools/mock.mjs",
+    "doctor": "node tools/doctor.mjs"
+  },
+  "license": "MIT",
+  "private": false
+}
