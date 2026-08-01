@@ -16,7 +16,12 @@
     "desktop_enabled": true
   },
   "portal": {
-    "site": "SAFER  |  Federal Motor Carrier Safety Administration",
+    "theme": {
+      "bar": [0, 51, 102],
+      "accent": [0, 94, 162]
+    },
+    "site": "SAFER Web  |  Company Snapshot",
+    "sub": "Federal Motor Carrier Safety Administration - U.S. Department of Transportation",
     "url": "https://safer.fmcsa.dot.gov/CompanySnapshot.aspx",
     "nav": [
       "SAFER Home",
@@ -24,57 +29,63 @@
       "Query Central",
       "Licensing & Insurance",
       "SMS",
+      "Feedback",
       "Help"
     ],
-    "label": "USDOT Number",
-    "query": "264184",
-    "hint": "Enter the USDOT number to open that carrier's company snapshot.",
-    "columns": [
-      "Snapshot Field",
-      "Value",
-      "Snapshot Field",
-      "Value"
-    ],
-    "rows": [
-      [
-        "USDOT Number",
-        "264184",
-        "Legal Name",
-        "SCHNEIDER NATIONAL CARRIERS INC"
-      ],
-      [
-        "DBA Name",
-        "(none listed)",
-        "Entity Type",
-        "CARRIER/SHIPPER/CARGO TANK/BROKER"
-      ],
-      [
-        "USDOT Status",
-        "ACTIVE",
-        "Out of Service Date",
-        "None"
-      ],
-      [
-        "Power Units",
-        "9,866",
-        "Drivers",
-        "11,335"
-      ],
-      [
-        "Safety Rating",
-        "Satisfactory",
-        "Rating Date",
-        "02/20/2003"
-      ],
-      [
-        "Operating Authority Status",
-        "AUTHORIZED",
-        "MCS-150 Form Date",
-        "on file"
-      ]
-    ],
-    "answerRow": 0,
-    "answer": "USDOT 264184 SCHNEIDER NATIONAL CARRIERS INC - ACTIVE, no DBA, 9,866 power units, 11,335 drivers, rated Satisfactory 02/20/2003",
-    "note": "Company snapshot - 12 fields for USDOT 264184"
+    "answer": "USDOT 264184 = SCHNEIDER NATIONAL CARRIERS INC, no DBA, CARRIER/SHIPPER/CARGO TANK/BROKER, ACTIVE; 9,866 power units, 11,335 drivers; rated Satisfactory 02/20/2003",
+    "scenes": [
+      {
+        "kind": "load",
+        "steps": 1,
+        "text": "Loading SAFER Company Snapshot...",
+        "status": "Opening the SAFER Company Snapshot query page on safer.fmcsa.dot.gov"
+      },
+      {
+        "kind": "search",
+        "steps": 3,
+        "label": "Search Criteria:  USDOT Number",
+        "query": "264184",
+        "hint": "SAFER returns exactly one company snapshot per USDOT number.",
+        "button": "Search",
+        "status": "Selecting USDOT Number as the search criteria and entering 264184"
+      },
+      {
+        "kind": "fields",
+        "steps": 5,
+        "url": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_param=USDOT&query_string=264184",
+        "title": "USDOT INFORMATION",
+        "cols": 1,
+        "fields": [
+          ["Entity Type", "CARRIER/SHIPPER/CARGO TANK/BROKER"],
+          ["USDOT Status", "ACTIVE"],
+          ["Out of Service Date", "None"],
+          ["Legal Name", "SCHNEIDER NATIONAL CARRIERS INC"],
+          ["DBA Name", "None listed"],
+          ["Physical Address", "3101 SOUTH PACKERLAND DRIVE, GREEN BAY, WI 54313"],
+          ["Phone", "(800) 558-6767"],
+          ["USDOT Number", "264184"]
+        ],
+        "status": "Reading the USDOT information block: legal name, DBA, entity type, status"
+      },
+      {
+        "kind": "datasheet",
+        "steps": 5,
+        "url": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_param=USDOT&query_string=264184",
+        "title": "Fleet Size and Safety Rating",
+        "subtitle": "SCHNEIDER NATIONAL CARRIERS INC  |  USDOT 264184  |  MC-133655",
+        "rows": [
+          ["MC/MX/FF Number(s)", "MC-133655", ""],
+          ["Power Units", "9,866", "as filed on MCS-150"],
+          ["Drivers", "11,335", "as filed on MCS-150"],
+          ["MCS-150 Form Date", "01/30/2026", ""],
+          ["MCS-150 Mileage (Year)", "847,225,359 (2025)", ""],
+          ["Review Date", "04/06/2023", "Type: Non-Ratable"],
+          ["Safety Rating", "Satisfactory (rated 02/20/2003)", ""]
+        ],
+        "answerRow": 6,
+        "note": "Snapshot data as of 07/31/2026 - source: FMCSA MCMIS",
+        "status": "Scrolling to the fleet counts and the review information section"
+      }
+    ]
   }
 }
