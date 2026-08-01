@@ -1,15 +1,24 @@
 {
   "name": "coasty-logistics-carrier-screen",
   "version": "1.0.0",
-  "description": "An AI agent that screens a motor carrier's federal safety record before you put freight on their trucks.",
+  "description": "An AI agent that opens the federal SAFER register, reads a motor carrier's authority and safety record, and reports back — then films itself doing it.",
   "keywords": [
     "coasty",
     "computer-use",
     "ai-agent",
     "browser-automation",
     "rpa",
-    "logistics",
-    "logistics-carrier-screen"
+    "llm",
+    "automation",
+    "web-automation",
+    "agentic-ai",
+    "no-code-scraping",
+    "web-scraping",
+    "scraping",
+    "playwright-alternative",
+    "zero-dependency",
+    "nodejs",
+    "logistics"
   ],
   "homepage": "https://github.com/coasty-ai/coasty-logistics-carrier-screen",
   "repository": {

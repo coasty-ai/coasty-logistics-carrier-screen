@@ -1,11 +1,11 @@
 {
   "slug": "logistics-carrier-screen",
-  "title": "Logistics — motor carrier safety screening",
+  "title": "Logistics \u2014 motor carrier safety screening",
   "vertical": "Logistics",
   "niche": "motor-carrier safety screening",
   "target": "safer.fmcsa.dot.gov",
   "publicTarget": true,
-  "task": "Go to https://safer.fmcsa.dot.gov/CompanySnapshot.aspx and look up the motor carrier whose USDOT number is 76830. From the company snapshot returned for that carrier, record the legal name, the DBA name if one is listed, the entity type, the USDOT operating status, the number of power units, and the number of drivers. Record the safety rating and its rating date as well, or state plainly that no rating is shown if the snapshot does not list one. Then report those values as a single labelled list, confirming that the USDOT number on the snapshot you read is 76830.",
+  "task": "Go to https://safer.fmcsa.dot.gov/CompanySnapshot.aspx and look up the motor carrier whose USDOT number is 264184. From the company snapshot returned for that carrier, record the legal name, the DBA name if one is listed, the entity type, the USDOT status, the number of power units, and the number of drivers. Record the carrier safety rating and its rating date as well, or state plainly that no rating is shown if the snapshot does not list one. Then report those values as a single labelled list, confirming that the USDOT number on the snapshot you read is 264184. If SAFER returns a Record Not Found page for that number, report that and stop rather than searching for another carrier.",
   "expectedSteps": 14,
   "maxSteps": 24,
   "capCents": 121,
@@ -14,5 +14,67 @@
   "machine": {
     "os_type": "linux",
     "desktop_enabled": true
+  },
+  "portal": {
+    "site": "SAFER  |  Federal Motor Carrier Safety Administration",
+    "url": "https://safer.fmcsa.dot.gov/CompanySnapshot.aspx",
+    "nav": [
+      "SAFER Home",
+      "Company Snapshot",
+      "Query Central",
+      "Licensing & Insurance",
+      "SMS",
+      "Help"
+    ],
+    "label": "USDOT Number",
+    "query": "264184",
+    "hint": "Enter the USDOT number to open that carrier's company snapshot.",
+    "columns": [
+      "Snapshot Field",
+      "Value",
+      "Snapshot Field",
+      "Value"
+    ],
+    "rows": [
+      [
+        "USDOT Number",
+        "264184",
+        "Legal Name",
+        "SCHNEIDER NATIONAL CARRIERS INC"
+      ],
+      [
+        "DBA Name",
+        "(none listed)",
+        "Entity Type",
+        "CARRIER/SHIPPER/CARGO TANK/BROKER"
+      ],
+      [
+        "USDOT Status",
+        "ACTIVE",
+        "Out of Service Date",
+        "None"
+      ],
+      [
+        "Power Units",
+        "9,866",
+        "Drivers",
+        "11,335"
+      ],
+      [
+        "Safety Rating",
+        "Satisfactory",
+        "Rating Date",
+        "02/20/2003"
+      ],
+      [
+        "Operating Authority Status",
+        "AUTHORIZED",
+        "MCS-150 Form Date",
+        "on file"
+      ]
+    ],
+    "answerRow": 0,
+    "answer": "USDOT 264184 SCHNEIDER NATIONAL CARRIERS INC - ACTIVE, no DBA, 9,866 power units, 11,335 drivers, rated Satisfactory 02/20/2003",
+    "note": "Company snapshot - 12 fields for USDOT 264184"
   }
 }
