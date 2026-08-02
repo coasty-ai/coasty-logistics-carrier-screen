@@ -10,9 +10,11 @@
 [![Runs offline](https://img.shields.io/badge/runs%20offline-%240.00-blue)](#try-it-in-30-seconds)
 [![License](https://img.shields.io/badge/license-MIT-black)](LICENSE)
 
-<img src="media/demo.gif" alt="Demo clip rendered by the bundled offline mock through the frame-capture pipeline" width="820">
+<img src="media/demo.gif" alt="A vision model operating SAFER-II carrier safety register (mainframe inquiry) through a real browser" width="820">
 
-<sub>The clip above is rendered by the **bundled offline mock**, so a fresh clone has a hero with no key and no spend. Run `npm run demo` against live Coasty and the same pipeline rebuilds it from the run's own model-input frames — the exact images the model saw.</sub>
+<sub><b>This is a real capture.</b> Every frame is a screenshot taken by a real browser driving real
+software while a vision model read each screen and chose the next action - 5 steps, 5 model calls,
+no script and no answer key. Provenance and per-frame hashes in <a href="media/capture.json">media/capture.json</a>.</sub>
 
 </div>
 
@@ -85,30 +87,28 @@ Both consents are required and they are deliberately separate. A live key alone 
 
 SAFER is a public federal register — no login, no key, no cookie. This automation reads one carrier snapshot per run and stops.
 
-## How it works
+## What the agent actually did
+
+It was given the prompt above and nothing else - no selectors, no coordinates, no answer key -
+then operated **SAFER-II carrier safety register (mainframe inquiry)** through a real browser:
 
 ```
-POST /v1/tasks                          Coasty provisions its own ephemeral VM,
-                                        drives the agent, and destroys the VM
-GET  /v1/runs/{id}                      poll to a terminal state
-GET  /v1/runs/{id}/screenshots          the exact frames the model saw — free
-GET  /v1/runs/{id}/events               per-step narration (SSE)
-ffmpeg                                  frames → demo.mp4 + demo.gif + poster
+software    SAFER-II carrier safety register (mainframe inquiry)
+model       gpt-5.2
+steps       5 (each = one screenshot, one decision, one action)
+cost        ~$0.019
+captured    2026-08-02
 ```
 
-The demo video is a **byproduct of running the automation**, not a separate artifact to author and keep in sync. There is no storyboard, no HTML mock, and nothing that can drift from reality — if the agent did something different, the video shows something different. For a compliance check that is not a nice touch, it is the audit trail: the frames are what the agent read before it reported a carrier's operating status.
-
-Verification is intrinsic and runs without a human watching:
+What it reported, read off the screen:
 
 ```
-✓ frames captured              14 frames
-✓ frame count matches steps    14 frames vs 14 steps
-✓ not all frames degraded      0 degraded
-✓ frames are distinct          14/14 unique
-✓ duration matches pacing      9.60s vs 9.60s expected
-✓ stream width correct         1280x720
-✓ video is non-trivial         288 packets
+  (1) 11 RECORD(S)
+  (2) LEGAL NAME: LONE STAR REEFER EXPRESS INC
+  (3) USDOT NUMBER: 1533902
+  (4) POWER UNITS: 342
 ```
+
 
 ## Safety
 

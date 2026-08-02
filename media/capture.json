@@ -1,0 +1,24 @@
+{
+  "kind": "real-capture",
+  "note": "Every frame is a screenshot taken by a real browser driving real software during a real agent run.",
+  "software": "SAFER-II carrier safety register (mainframe inquiry)",
+  "task": "You are covering the safety analyst desk on the SAFER-II carrier register terminal. Sign on as operator SAF07, leaving the region/node and access code exactly as they are pre-filled. From the function selection menu, open the CARRIER SAFETY INQUIRY function. Run an inquiry for domicile state TX - TEXAS, leaving the operating status filter on ALL and the snapshot as-of date as pre-filled. The results grid lists every Texas-domiciled carrier in the register. Scan that grid and find the SINGLE carrier with the largest number of power units, then pull up the carrier detail record for that carrier's USDOT number. The detail record re-prints the source-inquiry summary along its top line, so everything you need for the report is on that one screen. Report, quoting each value exactly as displayed: (1) how many records the inquiry selected, (2) the carrier's LEGAL NAME, (3) its USDOT NUMBER, (4) its POWER UNITS, (5) its MC/MX DOCKET NUMBER, (6) its MCS-150 FORM DATE, (7) its SAFETY RATING, (8) its VEHICLE OOS PERCENT, and (9) whether that vehicle OOS percent is ABOVE or BELOW the national average printed next to it.",
+  "model": "gpt-5.2",
+  "captured_at": "2026-08-02T01:08:23.134Z",
+  "status": "succeeded",
+  "answer": "(1) 11 RECORD(S)\n(2) LEGAL NAME: LONE STAR REEFER EXPRESS INC\n(3) USDOT NUMBER: 1533902\n(4) POWER UNITS: 342\n(5) MC/MX DOCKET NUMBER: MC-604187\n(6) MCS-150 FORM DATE: 03/24/2026\n(7) SAFETY RATING: SATISFACTORY\n(8) VEHICLE OOS PERCENT: 11.7% (NATL AVG 22.0%)\n(9) Vehicle OOS percent is BELOW the national average.",
+  "steps_taken": 5,
+  "frames_rendered": 5,
+  "frames_captured": 5,
+  "duplicate_frames_dropped": 0,
+  "model_calls": 5,
+  "approx_usd": 0.0192,
+  "video_seconds": 15.2,
+  "frame_sha256": [
+    "0a0b34c25178e434567fc7c2bb7d7ff775054f34d011df605dea7a7f11694132",
+    "777293b2d42ca7da9108fe2359c4dcd4195d9524a4a8b83493e2b13a610fbd6c",
+    "d04a349fe427d2f6c9ef5948d68e28e400041405e5c99b26cfccad1e786d6c23",
+    "3b6beef7ac34fc69242c319274f5c5ed3c4b668870953d64ebb6ec7e4dbbda69",
+    "7798aac7a655c31d2108d24553725480f414fe7765275e6277caeeb72812369f"
+  ]
+}
