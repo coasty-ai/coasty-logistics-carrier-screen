@@ -28,21 +28,27 @@ no script and no answer key. Provenance and per-frame hashes in <a href="media/c
 
 A complete, runnable [Coasty](https://coasty.ai) computer-use automation for **motor-carrier safety screening**. Before a broker tenders a load or a shipper onboards a new carrier, somebody has to check that the carrier actually exists, is authorised to operate, and is not out of service. That check lives on a public government site, and it is done by hand — one carrier at a time, a clerk copying the same handful of fields into a spreadsheet.
 
-It gives an AI agent one goal in plain English, and the agent drives a real browser on a real cloud desktop to accomplish it — no selectors, no scraping rules, no DOM parsing to maintain. That matters more here than on most targets: SAFER is a decades-old government application with no public JSON API for this view, and a scraper pinned to its markup is one redesign away from silently returning nothing. An agent reading the page the way a compliance clerk reads it does not care where the fields moved to.
+It gives an AI agent one goal in plain English, and the agent drives a real browser to accomplish it — here, the SAFER-II carrier safety register (mainframe inquiry) — no selectors, no scraping rules, no DOM parsing to maintain. That matters more here than on most targets: SAFER is a decades-old government application with no public JSON API for this view, and a scraper pinned to its markup is one redesign away from silently returning nothing. An agent reading the page the way a compliance clerk reads it does not care where the fields moved to.
 
 **Zero dependencies. Runs offline for $0 on a fresh clone. ~$0.70 to run for real.**
 
 ```
-"Go to https://safer.fmcsa.dot.gov/CompanySnapshot.aspx and look up the
- motor carrier whose USDOT number is 264184. From the company snapshot
- returned for that carrier, record the legal name, the DBA name if one is
- listed, the entity type, the USDOT status, the number of power units, and
- the number of drivers. Record the carrier safety rating and its rating
- date as well, or state plainly that no rating is shown if the snapshot
- does not list one. Then report those values as a single labelled list,
- confirming that the USDOT number on the snapshot you read is 264184. If
- SAFER returns a Record Not Found page for that number, report that and
- stop rather than searching for another carrier."
+"You are covering the safety analyst desk on the SAFER-II carrier register
+ terminal. Sign on as operator SAF07, leaving the region/node and access
+ code exactly as they are pre-filled. From the function selection menu,
+ open the CARRIER SAFETY INQUIRY function. Run an inquiry for domicile
+ state TX - TEXAS, leaving the operating status filter on ALL and the
+ snapshot as-of date as pre-filled. The results grid lists every
+ Texas-domiciled carrier in the register. Scan that grid and find the
+ SINGLE carrier with the largest number of power units, then pull up the
+ carrier detail record for that carrier's USDOT number. The detail record
+ re-prints the source-inquiry summary along its top line, so everything you
+ need for the report is on that one screen. Report, quoting each value
+ exactly as displayed: (1) how many records the inquiry selected, (2) the
+ carrier's LEGAL NAME, (3) its USDOT NUMBER, (4) its POWER UNITS, (5) its
+ MC/MX DOCKET NUMBER, (6) its MCS-150 FORM DATE, (7) its SAFETY RATING, (8)
+ its VEHICLE OOS PERCENT, and (9) whether that vehicle OOS percent is ABOVE
+ or BELOW the national average printed next to it."
 ```
 
 That prompt *is* the automation. When the site redesigns, the prompt still works. Point it at a different USDOT number and it is a different screening; nothing else changes.
@@ -127,7 +133,9 @@ This repo is built so that **accidental spend is structurally impossible**, not 
 - **Two independent consents.** `COASTY_ALLOW_LIVE=1` authorises the *destination*; `--confirm-cost-cents N` authorises the *cost*, and N must equal the server-computed worst case exactly.
 - **Idempotency by default.** The submit key is derived from the prompt, so a retried submit returns the original run instead of provisioning a second machine.
 - **A hard cap per unit.** A worst case above `capCents` in [`automation.json`](automation.json) is refused before any request is made.
-- **No credentials, ever.** This automation targets a public site. Nothing here reads a password, a token, or a cookie.
+- **No real credentials.** The captured demo signs on to a simulated legacy system with a
+  throwaway operator ID that the system itself displays. Nothing here reads a real
+  password, token or cookie, and no secret is stored in this repo.
 
 ## Project layout
 

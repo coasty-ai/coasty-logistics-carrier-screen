@@ -1,11 +1,11 @@
 {
   "slug": "logistics-carrier-screen",
-  "title": "Logistics \u2014 motor carrier safety screening",
+  "title": "Logistics — motor carrier safety screening",
   "vertical": "Logistics",
   "niche": "motor-carrier safety screening",
-  "target": "safer.fmcsa.dot.gov",
-  "publicTarget": true,
-  "task": "Go to https://safer.fmcsa.dot.gov/CompanySnapshot.aspx and look up the motor carrier whose USDOT number is 264184. From the company snapshot returned for that carrier, record the legal name, the DBA name if one is listed, the entity type, the USDOT status, the number of power units, and the number of drivers. Record the carrier safety rating and its rating date as well, or state plainly that no rating is shown if the snapshot does not list one. Then report those values as a single labelled list, confirming that the USDOT number on the snapshot you read is 264184. If SAFER returns a Record Not Found page for that number, report that and stop rather than searching for another carrier.",
+  "target": "SAFER-II",
+  "publicTarget": false,
+  "task": "You are covering the safety analyst desk on the SAFER-II carrier register terminal. Sign on as operator SAF07, leaving the region/node and access code exactly as they are pre-filled. From the function selection menu, open the CARRIER SAFETY INQUIRY function. Run an inquiry for domicile state TX - TEXAS, leaving the operating status filter on ALL and the snapshot as-of date as pre-filled. The results grid lists every Texas-domiciled carrier in the register. Scan that grid and find the SINGLE carrier with the largest number of power units, then pull up the carrier detail record for that carrier's USDOT number. The detail record re-prints the source-inquiry summary along its top line, so everything you need for the report is on that one screen. Report, quoting each value exactly as displayed: (1) how many records the inquiry selected, (2) the carrier's LEGAL NAME, (3) its USDOT NUMBER, (4) its POWER UNITS, (5) its MC/MX DOCKET NUMBER, (6) its MCS-150 FORM DATE, (7) its SAFETY RATING, (8) its VEHICLE OOS PERCENT, and (9) whether that vehicle OOS percent is ABOVE or BELOW the national average printed next to it.",
   "expectedSteps": 14,
   "maxSteps": 24,
   "capCents": 121,
@@ -17,8 +17,16 @@
   },
   "portal": {
     "theme": {
-      "bar": [0, 51, 102],
-      "accent": [0, 94, 162]
+      "bar": [
+        0,
+        51,
+        102
+      ],
+      "accent": [
+        0,
+        94,
+        162
+      ]
     },
     "site": "SAFER Web  |  Company Snapshot",
     "sub": "Federal Motor Carrier Safety Administration - U.S. Department of Transportation",
@@ -56,14 +64,38 @@
         "title": "USDOT INFORMATION",
         "cols": 1,
         "fields": [
-          ["Entity Type", "CARRIER/SHIPPER/CARGO TANK/BROKER"],
-          ["USDOT Status", "ACTIVE"],
-          ["Out of Service Date", "None"],
-          ["Legal Name", "SCHNEIDER NATIONAL CARRIERS INC"],
-          ["DBA Name", "None listed"],
-          ["Physical Address", "3101 SOUTH PACKERLAND DRIVE, GREEN BAY, WI 54313"],
-          ["Phone", "(800) 558-6767"],
-          ["USDOT Number", "264184"]
+          [
+            "Entity Type",
+            "CARRIER/SHIPPER/CARGO TANK/BROKER"
+          ],
+          [
+            "USDOT Status",
+            "ACTIVE"
+          ],
+          [
+            "Out of Service Date",
+            "None"
+          ],
+          [
+            "Legal Name",
+            "SCHNEIDER NATIONAL CARRIERS INC"
+          ],
+          [
+            "DBA Name",
+            "None listed"
+          ],
+          [
+            "Physical Address",
+            "3101 SOUTH PACKERLAND DRIVE, GREEN BAY, WI 54313"
+          ],
+          [
+            "Phone",
+            "(800) 558-6767"
+          ],
+          [
+            "USDOT Number",
+            "264184"
+          ]
         ],
         "status": "Reading the USDOT information block: legal name, DBA, entity type, status"
       },
@@ -74,18 +106,47 @@
         "title": "Fleet Size and Safety Rating",
         "subtitle": "SCHNEIDER NATIONAL CARRIERS INC  |  USDOT 264184  |  MC-133655",
         "rows": [
-          ["MC/MX/FF Number(s)", "MC-133655", ""],
-          ["Power Units", "9,866", "as filed on MCS-150"],
-          ["Drivers", "11,335", "as filed on MCS-150"],
-          ["MCS-150 Form Date", "01/30/2026", ""],
-          ["MCS-150 Mileage (Year)", "847,225,359 (2025)", ""],
-          ["Review Date", "04/06/2023", "Type: Non-Ratable"],
-          ["Safety Rating", "Satisfactory (rated 02/20/2003)", ""]
+          [
+            "MC/MX/FF Number(s)",
+            "MC-133655",
+            ""
+          ],
+          [
+            "Power Units",
+            "9,866",
+            "as filed on MCS-150"
+          ],
+          [
+            "Drivers",
+            "11,335",
+            "as filed on MCS-150"
+          ],
+          [
+            "MCS-150 Form Date",
+            "01/30/2026",
+            ""
+          ],
+          [
+            "MCS-150 Mileage (Year)",
+            "847,225,359 (2025)",
+            ""
+          ],
+          [
+            "Review Date",
+            "04/06/2023",
+            "Type: Non-Ratable"
+          ],
+          [
+            "Safety Rating",
+            "Satisfactory (rated 02/20/2003)",
+            ""
+          ]
         ],
         "answerRow": 6,
         "note": "Snapshot data as of 07/31/2026 - source: FMCSA MCMIS",
         "status": "Scrolling to the fleet counts and the review information section"
       }
     ]
-  }
+  },
+  "software": "SAFER-II carrier safety register (mainframe inquiry)"
 }
